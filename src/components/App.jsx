@@ -1,16 +1,24 @@
+import BackgroundContainer from "./Backgroundcontainer/BackgroundContainer";
+import SearchBar from "./SearchBar";
+import Wrapper from "./Wrapper";
+
 export const App = () => {
+
+  // const url = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=${process.env.API_KEY}`
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <BackgroundContainer>
+        
+        <Wrapper>
+          <SearchBar/>
+          <div>
+            React homework template
+            by kutsim`
+          </div>
+        </Wrapper>
+      </BackgroundContainer>
+      
+    </>
+    
   );
 };
