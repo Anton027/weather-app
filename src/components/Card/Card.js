@@ -11,25 +11,25 @@ const Card = ({ data }) => {
 
             <ul className={css.Card__list}>
                 <li className="Card__item">
-                    <p className="bio">{(data.name)? `${data.wind.speed} m/s` : " "}</p>
-                    <p>Wind Speed</p>
+                    <p className={css.bio}>{(data.name)? `${data.wind.speed} m/s` : " "}</p>
+                    <p className={css.bio}>Wind Speed</p>
                 </li>
                 <li className="Card__item">
-                    <p className="bio">{(data.name)? `${data.clouds.all} %` : " "}</p>
-                    <p className="bio">Clouds</p>
+                    <p className={css.bio}>{(data.name)? `${data.clouds.all} %` : " "}</p>
+                    <p className={css.bio}>Clouds</p>
                 </li>
                 <li className="Card__item">
-                    <p>{(data.name)? `${data.main.feels_like} °C` : " "}</p>
-                    <p className="bio">Fields Like</p>
+                    <p className={css.bio}>{(data.name)? `${data.main.feels_like} °C` : " "}</p>
+                    <p className={css.bio}>Fields Like</p>
                 </li>
                 <li className="Card__item">
-                    <p>{(data.name) ? data.sys.sunrise : " "}</p>
-                    <p className="bio">Sun Rise</p>
+                    <p className={css.bio}>{(data.name) ? data.sys.sunrise : " "}</p>
+                    <p className={css.bio}>Sun Rise</p>
                     
                 </li>
                 <li>
-                    <p>{(data.name) ? data.sys.sunset : " "}</p>
-                    <p className="bio">Sun Set</p>
+                    <p className={css.bio}>{(data.name) ? data.sys.sunset : " "}</p>
+                    <p className={css.bio}>Sun Set</p>
                 </li>
             </ul>
 

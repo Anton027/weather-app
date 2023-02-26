@@ -13,3 +13,7 @@
     justify-content: space-between;
     align-items: center;
 }
+.bio{
+    font-weight: 700;
+    color:rgb(7, 42, 99);
+}
