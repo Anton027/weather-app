@@ -19,7 +19,7 @@ export const App = () => {
         }
         baseFetch(location).then(res => {
             setData(res.data);
-        }).catch(error => setError(error.message))
+        }).catch(error => console.log(error.message))
       .finally(setiIsLoading(false));
     }, [location])
   
