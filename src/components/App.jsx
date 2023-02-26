@@ -10,7 +10,7 @@ import { baseFetch } from 'servises/Fetch';
 export const App = () => {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [, setiIsLoading] = useState(false);
   
   useEffect(() => {
@@ -29,7 +29,7 @@ export const App = () => {
   
   return (
     <>
-      {error && alert('Error, wrong http request')}
+      {/* {error && console.log('Error, wrong http request')} */}
       <BackgroundContainer>
         <Wrapper>
           <SearchBar onSubmit={handleSubmitForm}/>

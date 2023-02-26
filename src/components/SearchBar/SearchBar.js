@@ -12,7 +12,7 @@ const SearchBar = ({onSubmit}) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (location.trim() === '') {
-            alert('Please write correct city');
+            // alert('Please write correct city');
             return;
         }
         onSubmit(location);
