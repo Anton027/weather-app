@@ -11,7 +11,7 @@ export const App = () => {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
   const [error, setError] = useState(null);
-  const [isLoading, setiIsLoading] = useState(false);
+  const [, setiIsLoading] = useState(false);
   
   useEffect(() => {
         if (!location) {

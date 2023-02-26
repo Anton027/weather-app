@@ -10,9 +10,6 @@ const Card = ({ data }) => {
             
 
             <ul className={css.Card__list}>
-                { console.log(data)
-
-                }
                 <li className="Card__item">
                     <p className="bio">{(data.name)? `${data.wind.speed} m/s` : " "}</p>
                     <p>Wind Speed</p>
