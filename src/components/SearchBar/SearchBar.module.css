@@ -1,0 +1,32 @@
+.Header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+.Title{
+    margin-bottom: 20px;
+}
+.SearchForm{
+    display: flex;
+}
+.Input{
+    padding: 4px;
+    margin-right: 6px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+.SubmitBtn{
+    cursor: pointer;
+    padding: 8px;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.9);
+}
+.SubmitBtn:hover, .SubmitBtn:focus {
+    box-shadow: 0px 1px 30px 4px rgba(255, 255, 255, 1);
+    color: #fff;
+}

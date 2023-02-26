@@ -1,22 +1,50 @@
-import FormControl from '@mui/material/FormControl';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
+import { useState } from 'react';
 
-// import TextField from '@mui/material/TextField';
-const SearchBar = () => {
+import css from './SearchBar.module.css'
+
+const SearchBar = ({onSubmit}) => {
+    const [location, setLocation] = useState('')
+    
+    const handleLocatChange = e => {
+        setLocation(e.currentTarget.value)
+    };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (location.trim() === '') {
+            alert('Please write correct city');
+            return;
+        }
+        onSubmit(location);
+        setLocation('');
+    };
     return (
         <>
-            <header>
-                <FormControl>
-                    <InputLabel text="my-input">
-                        Please give Sity name
-                    </InputLabel>
-                    <Input
-                        id="my-input"
-                        aria-describedby="my-helper-text"
+            <header className={css.Header}>
+                <h1 className={css.Title}>
+                    Weather App
+                </h1>
+                <form className={css.SearchForm}
+                    onSubmit={handleSubmit}
+                >
+                    <input
+                        className={css.Input}
+                        type="text"
+                        name='location'
+                        value={location}
+                        placeholder="Enter City"
+                        autoComplete="off"
+                        required
+                        onChange={handleLocatChange}
                     />
-                </FormControl>
+                    <button
+                        className={css.SubmitBtn}
+                        type="submit"
 
+                    >
+                        Search
+                    </button>
+                </form>
             </header>
         </>
     )

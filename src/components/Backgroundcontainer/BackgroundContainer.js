@@ -1,7 +1,8 @@
-const BackgroundContainer = ({children}) => {
+import css from './BackgroundContainer.module.css'
+const BackgroundContainer = ({ children }) => {
     return (
         <>
-            <div className="bgrContainer">
+            <div className={css.BgrContainer}>
                 {children}
             </div>
         </>

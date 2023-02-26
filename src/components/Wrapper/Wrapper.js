@@ -1,7 +1,8 @@
-const Wrapper = ({children}) => {
+import css from './Wrapper.module.css'
+const Wrapper = ({ children }) => {
     return (
         <>
-            <section className="wrapper">
+            <section className={css.Wrapper}>
                 {children}
             </section>
         </>

@@ -1,23 +1,42 @@
+import { useEffect, useState } from 'react';
 import BackgroundContainer from "./Backgroundcontainer/BackgroundContainer";
+import Card from "./Card/Card";
+import { GlobalStyle } from "./GlobalStyle";
 import SearchBar from "./SearchBar";
 import Wrapper from "./Wrapper";
+import { baseFetch } from 'servises/Fetch';
+
 
 export const App = () => {
-
-  // const url = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=${process.env.API_KEY}`
+  const [data, setData] = useState({})
+  const [location, setLocation] = useState('')
+  const [error, setError] = useState(null);
+  const [isLoading, setiIsLoading] = useState(false);
+  
+  useEffect(() => {
+        if (!location) {
+            return;
+        }
+        baseFetch(location).then(res => {
+            setData(res.data);
+        }).catch(error => setError(error.message))
+      .finally(setiIsLoading(false));
+    }, [location])
+  
+  const handleSubmitForm = location => {
+    setLocation(location)
+  }
+  
   return (
     <>
+      {error && alert('Error, wrong http request')}
       <BackgroundContainer>
-        
         <Wrapper>
-          <SearchBar/>
-          <div>
-            React homework template
-            by kutsim`
-          </div>
+          <SearchBar onSubmit={handleSubmitForm}/>
+          <Card data={data} />
         </Wrapper>
       </BackgroundContainer>
-      
+      <GlobalStyle />
     </>
     
   );
